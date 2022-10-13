@@ -1,0 +1,126 @@
+<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+<script src="avatar.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLE0GMYHW4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLE0GMYHW4');
+
+</script>
+-->
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>
+  </title>
+
+  <script language="javascript" type="text/javascript">
+    function OnButtonClick() {
+      saveCanvas('avatar', 'png');
+    }
+  </script>
+</head>
+
+<body>
+  <h1>HERE YOU GO !</h1>
+  <div id="canvas"></div><!-- このIDの閉じタグ直前にキャンバスを表示させる -->
+
+  <!--<input class="btn btn-border" type="button" value="このアバターを保存する" onclick="OnButtonClick();"/><br />-->
+
+  <a class="btn btn-border" type="button" onclick="OnButtonClick();">>> このアバターを保存する <<</a>
+  <br />
+  <div id="output"></div>
+</body>
+
+<style type="text/css">
+  @font-face {
+    font-family: 'misaki-gothic';
+    src: url(../assets/misaki_gothic.ttf);
+  }    
+  body {
+    padding-top: 32px;
+  	font-family: misaki-gothic;
+    text-align: center;
+    font-size: 18px;
+    background-color: #002136;
+    /*color: rgb(200, 210, 240);*/
+    color: #fff;
+    line-height: 2em;
+  }
+
+  /*まずはお決まりのボックスサイズ算出をborer-boxに */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+.btn {
+  margin-top: 32px;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+}
+
+  .btn-border {
+    border-radius: 0;
+  }
+  .btn-border:before, 
+  .btn-border:after {
+    position: absolute;
+    width:100%;
+    height:2px;
+
+    content:'';
+    -webkit-transition: all .3s;
+    transition: all .3s;
+
+    background: #fff;
+  }
+
+  .btn-border:before {
+    top: 0;
+    left: 0;
+  }
+
+  a.btn-border:after {
+    right: 0;
+    bottom: 0;
+  }
+
+  a.btn-border:hover:before,
+  a.btn-border:hover:after {
+    width: 0;
+  }
+</style>
