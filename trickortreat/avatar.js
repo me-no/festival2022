@@ -29,7 +29,7 @@ function setup () {
 
 function draw () {
     eyes = [imgeyered, imgeyeblue, imgeyeteal];
-    paints = [imgpaint1, imgpaint2, imgpaint3];
+    paints = [imgpaint1, imgpaint2, imgpaint3, imgbody];
     components = [imghat, imgtape, imgwing];
 
     eyeDice = int(random(eyes.length));
