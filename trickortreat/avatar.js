@@ -36,11 +36,11 @@ function draw () {
     paintDice = int(random(paints.length));
     componentDice = int(random(components.length));
 
-    image(imgbody, 0, 0, width, height);
-    image(paints[paintDice], 0, 0, width, height);
-    image(eyes[eyeDice], 0, 0, width, height);
-    image(components[componentDice], 0, 0, width, height);
-    image(imgcandy, 0, 0, width, height);
+    image(imgbody, 0, -scal, width, height);
+    image(paints[paintDice], 0, -scal, width, height);
+    image(eyes[eyeDice], 0, -scal, width, height);
+    image(components[componentDice], 0, -scal, width, height);
+    image(imgcandy, 0, -scal, width, height);
 
     noLoop();
 }
