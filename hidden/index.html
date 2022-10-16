@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="sha256.js"></script>
+  </head>
+  <body>
+    <form id="form">
+    <span style="display:none;">参考：https://github.com/higurashi-takuto/password</span>
+    
+    <img src="draculaHackle.png">
+    <h1>キャンディーが　ほしいかい?</h1>
+
+    <p id="message">↓ハロウィンで　お菓子をもらうための　フレーズ↓</p>
+    <input type="text" placeholder="カタカナでにゅうりょく_" id="password">
+
+  </form>
+    <script>
+      function hash(text) {
+        const sha = new jsSHA('SHA-256', 'TEXT');
+        sha.update(text);
+        return sha.getHash('HEX');
+      }
+      function auth(password) {
+        const url = hash(password);
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.send();
+        xhr.onload = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            window.location = url;
+          } else {
+            const message = document.getElementById('message');
+            const input = document.getElementById('password');
+            //message.innerHTML = '<img src="../assets/append/wanted-appendix2.png" style="width: 256px;">';
+            input.value = '';
+          }
+        };
+        xhr.onerror = function () {
+          const message = document.getElementById('message');
+          message.innerHTML = 'エラーデス．ハイリナオシテクダサイ．';
+        };
+      }
+      const form = document.getElementById('form');
+      form.addEventListener('submit', function (event) {
+        const password = document.getElementById('password').value;
+        auth(password);
+        event.preventDefault();
+      });
+    </script>
+  </body>
+
+<style type="text/css">
+  @font-face {
+    font-family: 'misaki-gothic';
+    src: url(../assets/misaki_gothic.ttf);
+  }
+
+  body {
+  	font-family: misaki-gothic;
+    text-align: center;
+    font-size: 18px;
+    background-color: #002136;
+    color: rgb(200, 210, 240);
+    line-height: 2em;
+    padding-top: 40px;
+  }
+  h1 {
+    padding-top: 40px; 
+    opacity: 50%;
+    font-size: 16px;
+  }
+  input {
+    font-family: misaki-gothic;
+    min-width: fit-content;
+    width: 40%;
+    height: 40px;
+    /*border-radius: 20px;*/
+    color: rgb(200, 210, 240);
+    -webkit-text-fill-color: rgb(200, 210, 240);
+    background-color: rgb(10, 20, 40);
+    font-size: 20px;
+  }
+  #message {
+    padding-top: 40px;
+    padding-bottom:0;
+  }
+</style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GH133J8DYV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GH133J8DYV');
+</script>
+
+</html>
