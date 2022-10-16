@@ -156,7 +156,7 @@ function draw() {
     fill(255,255,255,30);
     noStroke();
     textSize(12);
-    text("#ドット絵再考察", 10, height - 16*2, width);
+    //text("#ドット絵再考察", 10, height - 16*2, width);
     text("さよならさんすう", 10, height - 16, width);
 
     noLoop();
