@@ -40,6 +40,11 @@ function setup () {
 }
 
 function draw() {
+    
+    noFill();
+    background(0,33,54);
+
+    noiseVar = 1;
     // 等倍のサイズは128x128
     // 8倍で座標を決める
     // 円の半径を決める
@@ -90,7 +95,7 @@ function draw() {
 
     }
     // ランダムな星を生成_星雲
-    starColors.splice(0,1);
+    //starColors.splice(0,1);// 星雲に使わない色を取り除く
     x_separation = 10000;
     curvature = int(random(2,6));
     for (k = 0; k < x_separation; k++) {
@@ -103,7 +108,7 @@ function draw() {
         }
         r = int(random(1,3));
         tr = random(50,100);
-        d = int(random(0, starColors.length));
+        d = int(random(1, starColors.length));
         colr = starColors[d][0];
         colg = starColors[d][1];
         colb = starColors[d][2];
@@ -111,8 +116,6 @@ function draw() {
         fill(colr, colg, colb, tr);
         rect(xx, yy, r/4*scal, r/4*scal);
         if(80<tr && tr <80.001 && r === 1){
-            console.log(tr);
-            console.log(r);
             tr_temp = tr;
             count = 0;
             for(count= 0; count < 16; count++){
@@ -143,7 +146,7 @@ function draw() {
 
     //読み込んだ画像の表示
     imgDice = int(random(8));
-    if(imgDice === 1 ){
+    if(imgDice === 1 || imgDice === 2){
         if (curvature === 5){
             image(imgHint, 0, 0, width, height);
         } else {
@@ -152,7 +155,7 @@ function draw() {
     } else {
         image(img, 0, 0,width, height);//top
     }
-    console.log(height);
+
     // sign
     textFont(font);
     fill(255,255,255,30);
@@ -161,5 +164,6 @@ function draw() {
     //text("#ドット絵再考察", 10, height - 16*2, width);
     text("さよならさんすう", 10, height - 16, width);
 
-    noLoop();
+    frameRate(0.25);
+    //noLoop();
 }
