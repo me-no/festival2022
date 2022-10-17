@@ -32,7 +32,9 @@ function preload() {
 }
 
 function setup () {
-    createCanvas(width, height);
+    let c = createCanvas(width, height);
+    c.parent('canvas');  //canvasを指定した要素の子要素にする
+
     noFill();
     background(0,33,54);
 }
