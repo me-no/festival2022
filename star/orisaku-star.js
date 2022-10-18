@@ -37,6 +37,9 @@ function setup () {
 
     noFill();
     background(0,33,54);
+
+    count = 0;
+    seen = false;
 }
 
 function draw() {
@@ -145,15 +148,26 @@ function draw() {
     }
 
     //読み込んだ画像の表示
-    imgDice = int(random(8));
-    if(imgDice === 1 || imgDice === 2){
-        if (curvature === 5){
-            image(imgHint, 0, 0, width, height);
+
+    if(!seen){// ヒントが出るまでランダムに黒板を表示
+        if (count < 3){// 3カウントまでは何も書かれていない黒板を表示
+            image(img, 0, 0,width, height);
         } else {
-            image(imgRare, 0, 0, width, height);
+            imgDice = int(random(8));
+            if(imgDice === 1 || imgDice === 2){
+                if (curvature === 5){
+                    image(imgHint, 0, 0, width, height);
+                    seen = true;
+                } else {
+                    image(imgRare, 0, 0, width, height);
+                }
+            } else {
+                image(img, 0, 0,width, height);
+            }
         }
+        count++;
     } else {
-        image(img, 0, 0,width, height);//top
+        image(imgHint, 0, 0, width, height);
     }
 
     // sign
