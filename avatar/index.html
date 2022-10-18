@@ -29,7 +29,7 @@
 
   <div style="margin:2em;">
     <p>リロードして　おきにいりの子を　みつけよう！</p>
-    <p>何匹　もちかえっても　いいんだよ．▼</p>
+    <p>何匹　つれてかえっても　いいんだよ．▼</p>
   </div>
 
   <div id="canvas"></div><!-- このIDの閉じタグ直前にキャンバスを表示させる -->
@@ -59,7 +59,13 @@
     line-height: 1.5em;
   }
 
-  /*まずはお決まりのボックスサイズ算出をborer-boxに */
+  #canvas {
+    background: rgb(10, 43, 64);
+    width: fit-content;
+    margin: auto;
+  }
+
+/*まずはお決まりのボックスサイズ算出をborer-boxに */
 *,
 *:before,
 *:after {
@@ -100,34 +106,34 @@ button.btn {
   border-radius: 0.5rem;
 }
 
-  .btn-border {
-    border-radius: 0;
-  }
-  .btn-border:before, 
-  .btn-border:after {
-    position: absolute;
-    width:100%;
-    height:2px;
+.btn-border {
+  border-radius: 0;
+}
+.btn-border:before, 
+.btn-border:after {
+  position: absolute;
+  width:100%;
+  height:2px;
 
-    content:'';
-    -webkit-transition: all .3s;
-    transition: all .3s;
+  content:'';
+  -webkit-transition: all .3s;
+  transition: all .3s;
 
-    background: #fff;
-  }
+  background: #fff;
+}
 
-  .btn-border:before {
-    top: 0;
-    left: 0;
-  }
+.btn-border:before {
+  top: 0;
+  left: 0;
+}
 
-  a.btn-border:after {
-    right: 0;
-    bottom: 0;
-  }
+a.btn-border:after {
+  right: 0;
+  bottom: 0;
+}
 
-  a.btn-border:hover:before,
-  a.btn-border:hover:after {
-    width: 0;
-  }
+a.btn-border:hover:before,
+a.btn-border:hover:after {
+  width: 0;
+}
 </style>
