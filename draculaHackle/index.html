@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+      <div id="canvas"></div><!-- このIDの閉じタグ直前にキャンバスを表示させる -->
+
+      <p class="copyright">
+        <a href="https://www.sayosan.cf/" target="_blank">(c)さよならさんすう</a>　<a href="https://twitter.com/RyntaloL/" target="_blank">ｶﾉｺﾘﾝﾀﾛｳ</a></p>
+
+    </main>
+    <script src="sketch.js"></script>
+  </body>
+  <style type="text/css">
+    @font-face {
+      font-family: 'misaki-gothic';
+      src: url(../assets/misaki_gothic.ttf);
+    }    
+    body {
+      font-family: misaki-gothic;
+      text-align: center;
+      font-size: 1.5rem;
+      background-color: #002136;
+      /*color: rgb(200, 210, 240);*/
+      color: #fff;
+      line-height: 1.5em;
+    }
+  
+    #canvas {
+      width: fit-content;
+      margin: auto;
+    }
+
+    p.copyright {
+      color: #6e6e6e;
+      font-size: 0.75rem;
+      margin-top:4em;
+    }
+    p.copyright>a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</html>
