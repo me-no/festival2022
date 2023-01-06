@@ -1,4 +1,4 @@
-let scal= 3;
+let scal= 2;
 
 let colors = [
   [230,224,221], // lightblue
@@ -8,7 +8,7 @@ let colors = [
 let colorDice;
 
 // drastic sin curve
-let xspacing = 3; // Distance between each horizontal location
+let xspacing = scal; // Distance between each horizontal location
 let w; // Width of entire wave
 let psi = 0.0; // Start angle at 0
 let amplitude; // Height of wave
@@ -22,7 +22,7 @@ let randomHeights = [];
 let randomDistances = [];
 
 function preload(){
-  imgmain = loadImage("sidefacemirror.png");
+  imgmain = loadImage("breath_main.png");
 }
 
 function setup() {
