@@ -28,24 +28,28 @@ function setup() {
 }
 
 function draw() {
-  // plot yellow-circle for background
+  // plot circle for background
   tr  = random(30);
   circlex = int(random(actualwidth))*scal;
   circley = int(random(actualheight))*scal;
 
   noStroke();
-  fill(255,219,3,tr);
-  circleradius = int(random(1, 10))*scal;
-  makeCircle(circlex, circley, circleradius);
   
-  // plot letters for background
-  letterox = int(random(actualwidth))*scal;
-  letteroy = int(random(actualheight))*scal;
-  image(imglettero, letterox, letteroy, imglettero.width/16*scal, imglettero.height/16*scal);
+  if(mouseX > 52*scal && mouseX < 81*scal && mouseY > 76*scal && mouseY < 130*scal) {// 「停」のところで提灯が消えていく
+    fill(0,33,54);
+  }else {
+    fill(255,219,3,tr);
+    // plot letters for background
+    letterox = int(random(actualwidth))*scal;
+    letteroy = int(random(actualheight))*scal;
+    image(imglettero, letterox, letteroy, imglettero.width/16*scal, imglettero.height/16*scal);
 
-  letterrx = int(random(actualwidth))*scal;
-  letterry = int(random(actualheight))*scal;
-  image(imgletterr, letterrx, letterry, imgletterr.width/16*scal, imgletterr.height/16*scal);
+    letterrx = int(random(actualwidth))*scal;
+    letterry = int(random(actualheight))*scal;
+    image(imgletterr, letterrx, letterry, imgletterr.width/16*scal, imgletterr.height/16*scal);
+    }
+  circleradius = int(random(4, 12))*scal;
+  makeCircle(circlex, circley, circleradius);
   
   
   // the back is floating
@@ -54,6 +58,21 @@ function draw() {
   image(imgback,back_x-3*scal, back_y-3*scal, cwidth, cheight);
   
   image(imgmarks, 0,0,cwidth,cheight);
+
+  
+  // plot firefly
+  fill(255,255,255,10);
+  mouseradius = int(random(16,30)/scal)*scal;
+  makeCircleAvec(mouseX, mouseY, mouseradius);  
+  
+  
+  // 蛍の光の前面に来る要素
+  if(mouseX >90*scal && mouseX < 190*scal && mouseY > 59*scal && mouseY < 180*scal){
+    image(imgkidlighten, 0, 0, cwidth, cheight);
+  } else {
+    image(imgkid, 0, 0, cwidth, cheight);
+  }
+
   // tree is floating
   tree_x = noise(noisex)*20;
   tree_y = noise(noisey)*20;
@@ -61,18 +80,7 @@ function draw() {
   
   noisex +=0.05;
   noisey +=0.03;
-  
-  if(mouseX >90*scal && mouseX < 190*scal && mouseY > 59*scal && mouseY < 180*scal){
-    image(imgkidlighten, 0, 0, cwidth, cheight);
-  } else {
-    image(imgkid, 0, 0, cwidth, cheight);
-  }
-
-  
-  // plot firefly
-  fill(255,255,255,10);
-  mouseradius = int(random(16,30)/scal)*scal;
-  makeCircleAvec(mouseX, mouseY, mouseradius);  
+    
   
   flywidth = imgfly.width/16*scal;
   flyheight = imgfly.height/16*scal;
