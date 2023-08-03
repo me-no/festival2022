@@ -54,7 +54,7 @@ function draw () {
   fill(200,200,200,tr);
   noStroke();
   for (let x = 0; x < yvalues.length; x++) {
-      rect(x*xspacing+period/4, yvalues[x]+canvasHeight - 95*scal, scal, scal);
+      rect(x*xspacing, yvalues[x]+canvasHeight - 40*scal, scal, scal);
   }
   
   image(imgback,0, 0, canvasWidth, canvasHeight);
