@@ -21,6 +21,7 @@ function preload () {
 }
 
 function setup () {
+    frameRate(20);
     actualSize = imgmain.width/4;
     canvasWidth = actualSize*scal;
     canvasHeight= actualSize*scal;
@@ -51,7 +52,7 @@ function draw () {
   }
   
   // plot sine wave for shadow
-  fill(200,200,200,tr);
+  fill(200,200,200,tr/2);
   noStroke();
   for (let x = 0; x < yvalues.length; x++) {
       rect(x*xspacing, yvalues[x]+canvasHeight - 40*scal, scal, scal);
