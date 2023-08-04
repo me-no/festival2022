@@ -22,6 +22,7 @@ function preload () {
 }
 
 function setup() {
+  frameRate(20);
   imgwidth = imgmain.width / 4 * scal;
   imgheight = imgmain.height / 4 * scal;
   cwidth = imgwidth;
