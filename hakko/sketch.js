@@ -105,9 +105,15 @@ function draw() {
 
   makeRhombus(fire_x, fire_y, rhr, rhcolors);
   
-  // train 
-  if(currentMin%3==0 && currentSec == 0){
-    runTrain();
+  // train
+  takeTime = 8;// 全車両が通過する時間
+  carNumber = 8;
+  trVertex = currentSec%takeTime;
+  if(currentMin%3==0 && currentSec < takeTime) {
+    traincordx = map(trVertex*1000+currentMillisec, 0, takeTime*1000, -trainWidth, canvasWidth+(carNumber-1)*trainWidth);
+    for(let i = 0; i<carNumber; i++) {
+      showTrainCar(traincordx-trainWidth*i);
+    }
   }
 
   
@@ -238,10 +244,6 @@ function mouseClicked() {
   }
 }
 
-function runTrain() {
-  cars = 10;
-  trainhere = map(currentMillisec, 0, 1000, -trainWidth, canvasWidth+trainWidth*cars);
-  for(let i = 0; i<cars; i++) {
-    image(imgtrain, trainhere-trainWidth*i, trainHorizontal, trainWidth, trainHeight);
-  }
+function showTrainCar (x) {
+  image(imgtrain, x, trainHorizontal, trainWidth, trainHeight);
 }
