@@ -33,8 +33,8 @@ let strum = 0.5;// height of the wave
 function preload() {
   imgback = loadImage("back-2.png");
   imgbackfin = loadImage("back-fin-trans.png");
-  imgsign = loadImage("sign.png");
-  imgsignfired = loadImage("sign-fired.png");
+  imgsign = loadImage("sign-renewbdg.png");
+  imgsignfired = loadImage("sign-fired-renewbdg.png");
   imglight = loadImage("lantern.png");
   imgdolphinkid = loadImage("dolphinkid-trans.png");
   imgsignlight=loadImage("sign-bright.png");
