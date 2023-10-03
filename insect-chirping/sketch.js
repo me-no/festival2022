@@ -1,4 +1,4 @@
-let scal = 3;
+let scal = 2;
 let cwidth, cheight, actualwidth, actualheight;
 let backcolor = [0,33,54];
 
