@@ -2,7 +2,7 @@ let scal = 3;
 let cwidth, cheight, actualwidth, actualheight;
 let backcolor = [0,33,54];
 
-let fr = 30;
+let fr = 16;
 let currentTime, currentSec, currentMillisec;
 
 function preload() {
