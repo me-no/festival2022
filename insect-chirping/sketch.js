@@ -3,6 +3,7 @@ let cwidth, cheight, actualwidth, actualheight;
 let backcolor = [0,33,54];
 
 let fr = 30;
+let currentTime, currentSec, currentMillisec;
 
 function preload() {
   imgkid = loadImage("kid-close-1.png");
@@ -18,7 +19,7 @@ function preload() {
   ins_s_up = loadImage("ins-s-up.png");
   lin = loadImage("lin.png");
   kang = loadImage("kang.png");
-  
+ 
   insects = [ins_left, ins_right, ins_s_down, ins_s_up, lin];
 }
 
@@ -32,7 +33,7 @@ function setup() {
   createCanvas(cwidth, cheight);
   background(backcolor[0],backcolor[1],backcolor[2]);
   image(imgback, 0, 0, cwidth, cheight);
-    
+
   circleradius = 10*scal;
   
   count = 0;
@@ -41,6 +42,9 @@ function setup() {
 }
 
 function draw() {
+  currentTime = new Date();
+  currentSec = currentTime.getSeconds();
+  currentMillisec = currentTime.getMilliseconds();
   // mouse hovering
   fill(255,10);
   mouseradius = int(random(6,33)/scal)*scal;
@@ -66,7 +70,7 @@ function draw() {
     rhombussize = int(random(10,30));
 
     kangscale = int(random(2));
-    image(kang, rhombusx, rhombusy, kang.width/4*scal*kangscale, kang.height/4*scal*kangscale);
+    //image(kang, rhombusx, rhombusy, kang.width/4*scal*kangscale, kang.height/4*scal*kangscale);
     
     alertcolors = [
       [255,77,100,100],
@@ -78,10 +82,13 @@ function draw() {
     makeRhombus(alertx, alerty, rhombussize, alertcolors[alertcoldice]);
     
     // cover image forwarding
-    if(crosscount<=countLimit){
-      image(cross_right, 0, 0, cwidth, cheight);
+    //if(crosscount<=countLimit){
+    if(currentMillisec < 500) {
+      image(cross_right, 0, 0, cwidth, cheight); 
+      image(kang, rhombusx, rhombusy, kang.width/4*scal*kangscale, kang.height/4*scal*kangscale);
     } else {
       image(cross_left, 0, 0, cwidth, cheight);
+      image(kang, rhombusx, rhombusy, kang.width/4*scal*kangscale, kang.height/4*scal*kangscale);
       if(crosscount == countLimit*2) {
         crosscount = 0;
       }
@@ -182,7 +189,5 @@ function plotInsect() {
   if(abs(x-mouseX) > 60*scal || abs(y-mouseY) > 60*scal){// マウス位置を避ける
     image(insects[d], x,y,insects[d].width/4*scal, insects[d].height/4*scal);
     // insects appears after a few times
-  }
-  
+  }  
 }
-
