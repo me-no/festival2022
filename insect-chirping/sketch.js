@@ -1,6 +1,8 @@
-let scal = 2;
+let scal = 3;
 let cwidth, cheight, actualwidth, actualheight;
 let backcolor = [0,33,54];
+
+let fr = 30;
 
 function preload() {
   imgkid = loadImage("kid-close-1.png");
@@ -21,7 +23,7 @@ function preload() {
 }
 
 function setup() {
-  frameRate(10);
+  frameRate(fr);
   actualwidth = imgback.width/4;
   actualheight = imgback.height/4;
   cwidth = imgback.width/4*scal;
@@ -35,7 +37,7 @@ function setup() {
   
   count = 0;
   crosscount = 0;
-  countLimit = 10;
+  countLimit = fr;
 }
 
 function draw() {
