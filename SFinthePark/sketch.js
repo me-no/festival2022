@@ -7,13 +7,24 @@ let center = -10*scal;// center of y
 let centerNoise=0;
 //let backNoise = 2;
 let tr = 100;// transparency
-
+let count=0;
+let rest = 4;
 
 function preload() {
   imgback = loadImage("back.png");
   imgfish = loadImage("manbow.png");
   imgtrn = loadImage("train.png");
-  imgslider= loadImage("theslider.png");
+  imgslider= loadImage("mainback.png");
+  imglight = loadImage("light.png");
+  
+  imgl1 = loadImage("l1.png");
+  imgl2 = loadImage("l2.png");
+  imgl3 = loadImage("l3.png");
+  
+  imgr1= loadImage("r1.png");
+  imgr2 = loadImage("r2.png");
+  imgr3 = loadImage("r3.png");
+  imgr4 = loadImage("r4.png");
 }
 
 function setup() {
@@ -41,6 +52,24 @@ function draw() {
   
   drawPixelSineWave((center)*16);
   drawPixelSineWave((center)*4);
+  
+  //
+  // 触ると動くデジタルバージョン:
+  //
+  // https://me-no.sayosan.cf/SFinthePark/
+  //
+  // 
+  //     ■■■
+  //     ■ ■
+  //     ■ ■
+  //     ■ ■                QR Code
+  //   ■■■ ■■■
+  //   ■     ■
+  //    ■   ■
+  //      ■
+  // 
+  
+  
 
   image(imgback, 0, 0, cwidth, cheight);
   
@@ -48,23 +77,61 @@ function draw() {
   
   // manbow 
   if(mouseX>186*scal && mouseY>44*scal && mouseX<327*scal && mouseY<144*scal) {
-    image(imgfish, fish, -fish, cwidth, cheight);
-    centerNoise+=0.01;
+    image(imgfish, mouseX/186+fish, mouseX/186-fish, cwidth, cheight);
   } else {
     image(imgfish, 0, 0, cwidth, cheight);
   }
 
   // train
   if(mouseX > 49*scal && mouseY > 28*scal && mouseX < 144*scal && mouseY < 111*scal) {
-    image(imgtrn, -train, -train, cwidth, cheight);
-    centerNoise+=0.01;
+    image(imgtrn, mouseX/49-train, mouseX/49-train, cwidth, cheight);
   } else {
     image(imgtrn, 0, 0, cwidth,cheight);
   }
-
   
+  centerNoise+=0.05;
+
   // the front 
   image(imgslider, 0, 0, cwidth, cheight);
+  
+  // UO
+  d = new Date();
+  uocount = d.getMilliseconds();
+  if(90*scal<mouseX && 124*scal<mouseY && mouseX<146*scal && mouseY<216*scal){
+    if(uocount<200){
+      image(imgl1, 0, 0, cwidth, cheight);
+    } else if (uocount<400){
+      image(imgl2, 0, 0, cwidth, cheight);
+    } else if(uocount < 600) {
+      image(imgl3, 0, 0, cwidth, cheight);
+    }
+  }
+  
+  if(220*scal<mouseX && 95*scal<mouseY && mouseX<357*scal && mouseY<220*scal) {
+    if(uocount<150){
+      image(imgr1, 0, 0, cwidth, cheight);
+    } else if (uocount<300) {
+      image(imgr2,  0, 0, cwidth, cheight);
+    } else if(uocount<450) {
+      image(imgr3,  0, 0, cwidth, cheight);
+    } else if(uocount<600) {
+      image(imgr4,  0, 0, cwidth, cheight);
+    }
+  }
+  
+  // morse
+  if(
+    count < 2 || (3<=count && count<4) || (5<=count && count<7) || (8<=count && count<=9)
+    ||
+     (10+rest<=count && count<12+rest)||(13+rest<=count && count<15+rest) || (16+rest<=count && count<17+rest) || (18+rest<=count && count<=20+rest)
+    ) {
+     image(imglight, 0, 0, cwidth, cheight);
+   }
+  
+  count++;
+  if(count > 20+rest*2) {
+    count = 0;
+  }
 }
 
 function makeRhombus (x, y, r, color) {// xyは左上、rは大きさ、colorは透過色込み
