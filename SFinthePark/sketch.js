@@ -1,4 +1,4 @@
-let scal = 3;
+let scal = 2;
 
 // for sine wave 
 let dr=  0;
