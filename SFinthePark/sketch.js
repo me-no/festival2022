@@ -25,7 +25,11 @@ function preload() {
   imgr2 = loadImage("r2.png");
   imgr3 = loadImage("r3.png");
   imgr4 = loadImage("r4.png");
+  
+  imgkid = loadImage("kid.png");
+  imgkid2 = loadImage("kid2.png");
 }
+
 
 function setup() {
   cwidth = imgback.width/4*scal;
@@ -44,14 +48,14 @@ function draw() {
   makeRhombus(rhombusx, rhombusy, r*scal, rhombusColor);
 
   
-  fill(255,255,255,tr/6);
+  fill(255,255,255,tr/4);
   
   n = noise(centerNoise);
   fish = map(n, 0, 1, 0, 20);
   train = map(n, 0, 1, 0, 30);
   
-  drawPixelSineWave((center)*16);
-  drawPixelSineWave((center)*4);
+  drawPixelSineWave((center)*16,strum);
+  drawPixelSineWave((center)*4,strum);
   
   //
   // 触ると動くデジタルバージョン:
@@ -73,7 +77,8 @@ function draw() {
 
   image(imgback, 0, 0, cwidth, cheight);
   
-  drawPixelSineWave((center)*8);
+  drawPixelSineWave((center)*8,strum);
+  drawPixelSineWave((center)*8,strum*2);
   
   // manbow 
   if(mouseX>186*scal && mouseY>44*scal && mouseX<327*scal && mouseY<144*scal) {
@@ -105,9 +110,7 @@ function draw() {
     } else if(uocount < 600) {
       image(imgl3, 0, 0, cwidth, cheight);
     }
-  }
-  
-  if(220*scal<mouseX && 95*scal<mouseY && mouseX<357*scal && mouseY<220*scal) {
+  } else if(220*scal<mouseX && 95*scal<mouseY && mouseX<357*scal && mouseY<220*scal) {
     if(uocount<150){
       image(imgr1, 0, 0, cwidth, cheight);
     } else if (uocount<300) {
@@ -129,6 +132,14 @@ function draw() {
    }
   
   count++;
+  
+  // kid 
+  if(count > 20) {
+    image(imgkid2, 0, 0, cwidth, cheight);
+  } else {
+    image(imgkid, 0, 0, cwidth, cheight);
+  }
+  
   if(count > 20+rest*2) {
     count = 0;
   }
@@ -151,10 +162,10 @@ function makeRhombus (x, y, r, color) {// xyは左上、rは大きさ、colorは
     }
 }
 
-function drawPixelSineWave (center) {
+function drawPixelSineWave (center, sinheight) {
   for(let x =  0; x < width; x+=scal/10) {
     let angle = dr + x/50;
-    let y = map(sin(angle), -strum, strum, width/4, width*3/4)+center;
+    let y = map(sin(angle), -sinheight, sinheight, width/4, width*3/4)+center;
     rect(int(x/scal)*scal, int(y/scal)*scal, scal,scal);
   }
   dr += 0.05;
