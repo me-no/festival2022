@@ -14,7 +14,7 @@ function preload() {
   imgback = loadImage("back.png");
   imgfish = loadImage("manbow.png");
   imgtrn = loadImage("train.png");
-  imgslider= loadImage("mainback.png");
+  imgslider= loadImage("front.png");
   imglight = loadImage("light.png");
   
   imgl1 = loadImage("l1.png");
@@ -36,6 +36,7 @@ function setup() {
   cheight = imgback.height/4*scal;
   createCanvas(cwidth, cheight);
   background(210,233,236);
+  frameRate(10);
 }
 
 function draw() {
