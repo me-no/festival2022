@@ -24,6 +24,10 @@
           });
         });
       }
+      // scroll disable
+      window.addEventListener('touchmove', function(event) {
+        event.preventDefault();
+      });
     </script>
   </body>
 </html>
