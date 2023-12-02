@@ -162,13 +162,14 @@ function draw() {
   }
   
   // rails 
-  rn = noise(railNoise);
+  //rn = noise(railNoise);
+  rn = noise(centerNoise);
 
-  if(mouseX > 252*scal && mouseY > 135*scal && mouseX < 350*scal && mouseY < 184*scal) {
-    railNoise+=0.1;
-   } else {
-     rn = 0;
-   }
+  //if(mouseX > 252*scal && mouseY > 135*scal && mouseX < 350*scal && mouseY < 184*scal) {
+   // railNoise+=0.1;
+   //} else {
+   //  rn = 0;
+   //}
     image(imgrail1, 272*scal, 145*scal-rn*10, imgrail1.width/4*scal, imgrail1.height/4*scal);
     image(imgrail2, 291*scal, 146*scal-rn*8, imgrail2.width/4*scal, imgrail2.height/4*scal);
     image(imgrail3, 311*scal, 147*scal-rn*5, imgrail3.width/4*scal, imgrail3.height/4*scal);
