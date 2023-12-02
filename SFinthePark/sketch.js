@@ -5,10 +5,14 @@ let dr=  0;
 let strum = 2;// height of the wave:反比例
 let center = -10*scal;// center of y
 let centerNoise=0;
-//let backNoise = 2;
+let railNoise = 2;
 let tr = 100;// transparency
 let count=0;
 let rest = 4;
+
+// clock
+let handlen = 6*scal;
+let rad=0;
 
 function preload() {
   imgback = loadImage("back.png");
@@ -28,6 +32,17 @@ function preload() {
   
   imgkid = loadImage("kid.png");
   imgkid2 = loadImage("kid2.png");
+  
+  imgrail1=loadImage("rail1.png");
+  imgrail2=loadImage("rail2.png");
+  imgrail3=loadImage("rail3.png");
+  imgrail4=loadImage("rail4.png");
+  imgrail5=loadImage("rail5.png");
+  
+  imgclock = loadImage("clock.png");
+  
+  imgdisplight = loadImage("displaylight.png");
+
 }
 
 
@@ -36,7 +51,6 @@ function setup() {
   cheight = imgback.height/4*scal;
   createCanvas(cwidth, cheight);
   background(210,233,236);
-  frameRate(10);
 }
 
 function draw() {
@@ -95,11 +109,11 @@ function draw() {
     image(imgtrn, 0, 0, cwidth,cheight);
   }
   
-  centerNoise+=0.05;
-
-  // the front 
-  image(imgslider, 0, 0, cwidth, cheight);
+  centerNoise+=0.1;
   
+  
+
+  // the front   
   // UO
   d = new Date();
   uocount = d.getMilliseconds();
@@ -110,6 +124,8 @@ function draw() {
       image(imgl2, 0, 0, cwidth, cheight);
     } else if(uocount < 600) {
       image(imgl3, 0, 0, cwidth, cheight);
+    } else {
+      image(imgslider, 0, 0, cwidth, cheight);
     }
   } else if(220*scal<mouseX && 95*scal<mouseY && mouseX<357*scal && mouseY<220*scal) {
     if(uocount<150){
@@ -120,8 +136,63 @@ function draw() {
       image(imgr3,  0, 0, cwidth, cheight);
     } else if(uocount<600) {
       image(imgr4,  0, 0, cwidth, cheight);
+    } else {
+      image(imgslider, 0, 0, cwidth, cheight);
+    }
+  } else {
+    image(imgslider, 0, 0, cwidth, cheight);
+  }
+
+  
+  // remote controller 
+  if(mouseX > 149*scal && mouseY > 84*scal && mouseX < 185*scal && mouseY < 150*scal) {
+    tint(255, 100+100*n);
+    image(imgdisplight, 0, 0, cwidth, cheight);
+    tint(255,255);
+    dig3 = int(map(n, 0, 1, 1,4) );
+    fill(97, 131, 49);
+    rect(160*scal, 96*scal, scal, scal*3);
+    rect(158*scal, 97*scal, scal, scal*2);
+    for(let i=0;i < dig3;i++) {
+      rect(160*scal,(98-3-i)*scal, scal, scal);
+      rect(158*scal, (96-i)*scal, scal, scal);
+      rect(156*scal, (99-i)*scal, scal, scal);
     }
   }
+  
+  // rails 
+  rn = noise(railNoise);
+
+  if(mouseX > 252*scal && mouseY > 135*scal && mouseX < 350*scal && mouseY < 184*scal) {
+    railNoise+=0.1;
+   } else {
+     rn = 0;
+   }
+    image(imgrail1, 272*scal, 145*scal-rn*10, imgrail1.width/4*scal, imgrail1.height/4*scal);
+    image(imgrail2, 291*scal, 146*scal-rn*8, imgrail2.width/4*scal, imgrail2.height/4*scal);
+    image(imgrail3, 311*scal, 147*scal-rn*5, imgrail3.width/4*scal, imgrail3.height/4*scal);
+    image(imgrail4, 327*scal, 146*scal+rn*5, imgrail4.width/4*scal, imgrail4.height/4*scal);
+    image(imgrail5, 321*scal, 157*scal-rn*5, imgrail5.width/4*scal, imgrail5.height/4*scal);
+    image(imgrail5, 335*scal, 156*scal-rn*3, imgrail5.width/4*scal, imgrail5.height/4*scal);  
+    
+  
+  // clock 
+  if(mouseX > 191*scal && mouseY > 92*scal && mouseX < 230*scal && mouseY < 141*scal) {
+    image(imgclock, 0, 0, cwidth, cheight);
+    fill(30,67,59);
+    lenx0 = 212*scal;
+    leny0 = 115*scal;
+    for(let i = 0; i<handlen;i++) {
+      lenx = lenx0 + int(i*cos(rad)/scal)*scal;
+      leny = leny0 + int(i*sin(rad)/scal)*scal;
+      rect(lenx, leny, scal,scal);
+    }
+    rad++;
+    if(rad >= 360) {
+      rad=0;
+    }
+  }
+  
   
   // morse
   if(
