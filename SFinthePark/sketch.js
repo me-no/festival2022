@@ -51,6 +51,7 @@ function setup() {
   cheight = imgback.height/4*scal;
   createCanvas(cwidth, cheight);
   background(210,233,236);
+  frameRate(10);
 }
 
 function draw() {
