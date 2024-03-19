@@ -32,6 +32,7 @@ function preload () {
 }
 
 function setup() {
+  frameRate(30);
   cwidth = back.width/4*scal;
   cheight = back.height/4*scal;
   createCanvas(cwidth,cheight);
