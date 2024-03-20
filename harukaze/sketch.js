@@ -34,6 +34,10 @@ function setup() {
   dvel = map(random(), 0, 1, -2, -1);// 二つ目のサインカーブの周期を変える
   yvalues = new Array(floor(swidth / scal));
   
+  showPetal=[];
+  for(let i=0;i<yvalues.length;i++) {
+    showPetal.push(random());
+  }
 }
 
 function draw() {
@@ -93,8 +97,10 @@ function renderWaveImg(center, array,img, i_width, i_height) {
   noStroke();
   fill(255);
   // A simple way to draw the wave with an ellipse at each location
-  for (let x = 0; x < array.length; x+=i_width*8) {
-    image(img, x*scal, center +array[x], i_width, i_height);
+  for (let x = 0; x < array.length; x+=i_width) {
+    if(showPetal[x] > 0.8){
+      image(img, x*scal, center +array[x], i_width, i_height);
+    }
   }
 }
 

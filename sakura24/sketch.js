@@ -25,9 +25,12 @@ function preload () {
   kid = loadImage("kid.png");
   kid2 = loadImage("kid2.png");
   sakura = loadImage("sakura-front.png");
+  petal = loadImage("petal.png");
+  petal2 = loadImage("petal2.png");
   
   g_backs = [g_back, g_back2];
   kids = [kid, kid2];
+  petals = [petal, petal2];
   
 }
 
@@ -63,13 +66,18 @@ function draw() {
   
   // sine wave
   fill(255,255,255,30);
-  yvalues = calcWave(yvalues, amplitude, dx, 0.02);
-  renderWave( int(cheight/2/scal+24)*scal, yvalues );
   
   yvalues = calcWave(yvalues, amplitude*1.5, dvel, 0.01);// ここでdvel にdx をかけると正常なサインカーブになる
   renderWave( int(cheight/2/scal + 36)*scal, yvalues);
   
+  yvalues = calcWave(yvalues, amplitude, dx, 0.02);
+  //renderWave( int(cheight/2/scal+24)*scal, yvalues );
+  
+  
   image(g_front, 0,0,cwidth,cheight);
+  
+  renderWaveImg(int(cheight/2/scal+24)*scal, yvalues, petals);
+  
   image(kids[i], 0,0,cwidth,cheight);
   image(front, 0,0,cwidth,cheight);
   
@@ -102,5 +110,20 @@ function renderWave(center, array) {
   // A simple way to draw the wave with an ellipse at each location
   for (let x = 0; x < array.length; x++) {
     rect(x * scal, center + array[x], scal, scal);
+  }
+}
+
+function renderWaveImg(center, array,imgs) {
+  noStroke();
+  fill(255);
+  
+  // A simple way to draw the wave with an ellipse at each location
+  for (let x = 0; x < array.length; x+=petal.width/4*scal) {
+    let i = count+x;
+    if(i<500) {  
+      image(imgs[0], x * scal, center + array[x], imgs[0].width/4*scal, imgs[0].height/4*scal);
+    } else {
+      image(imgs[1], x * scal, center + array[x],imgs[1].width/4*scal, imgs[1].height/4*scal);
+    }
   }
 }
