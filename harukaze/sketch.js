@@ -31,7 +31,7 @@ function setup() {
   swidth = cwidth*2/3+scal;
   //dx = map(random(), 0, 1, -(TWO_PI/period)*4, -(TWO_PI/period));
   dx = (TWO_PI / period) * scal;// 周期はscal / period 
-  dvel = map(random(), 0, 1, -2, -1);// 二つ目のサインカーブの周期を変える
+  dvel = -1.59;//map(random(), 0, 1, -2, -1);// 二つ目のサインカーブの周期を変える
   yvalues = new Array(floor(swidth / scal));
   
   showPetal=[];
