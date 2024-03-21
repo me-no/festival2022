@@ -44,8 +44,8 @@ function setup() {
   // sin wave
   amplitude = cheight/10;
   swidth = cwidth+scal;
-  dx = map(random(), 0, 1, -(TWO_PI/period)*4, -(TWO_PI/period));
-  //dx = -(TWO_PI / period) * scal;// 周期はscal / period 
+  //dx = map(random(), 0, 1, -(TWO_PI/period)*4, -(TWO_PI/period));
+  dx = -(TWO_PI / period) * scal;// 周期はscal / period 
   dvel = map(random(), 0, 1, -3, -1);// 二つ目のサインカーブの周期を変える
   yvalues = new Array(floor(swidth / scal));
 }
