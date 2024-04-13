@@ -39,7 +39,35 @@
                     scale="10 10 10"
                     class="clickable"
                     rotation="-90 0 0"
-                    position="0 0 20"
+                    position="0 20 0"
+                    gesture-handler
+                ></a-image>
+            </a-marker>
+
+            <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/marker/pattern-1.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="assets/images/03-b.png"
+                    scale="10 10 10"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    position="0 0 0"
+                    gesture-handler
+                ></a-image>
+                <a-image
+                    src="assets/images/03-f.png"
+                    scale="10 10 10"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    position="0 20 0"
                     gesture-handler
                 ></a-image>
             </a-marker>
