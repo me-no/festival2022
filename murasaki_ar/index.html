@@ -5,6 +5,10 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/3.0.0/aframe/build/aframe-ar-nft.js"></script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -44,6 +48,7 @@
                 ></a-image>
             </a-marker>
 
+            <!--
             <a-marker
                 id="animated-marker"
                 type="pattern"
@@ -54,9 +59,18 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
+            -->
+            <a-nft
+                type="nft"        
+                url="https://p5.menopixel.net/murasaki_ar/assets/marker/nft/03-marker256"
+                smooth="true"
+                smoothCount="10"
+                smoothTolerance=".01"
+                smoothThreshold="5"
+            >
                 <a-image
                     src="assets/images/03-b.png"
-                    scale="10 10 10"
+                    scale="1 1 1"
                     class="clickable"
                     rotation="-90 0 0"
                     position="0 0 0"
@@ -64,13 +78,13 @@
                 ></a-image>
                 <a-image
                     src="assets/images/03-f.png"
-                    scale="10 10 10"
+                    scale="1 1 1"
                     class="clickable"
                     rotation="-90 0 0"
                     position="0 1 0"
                     gesture-handler
                 ></a-image>
-            </a-marker>
+            </a-nft>
 
 
             <a-marker
