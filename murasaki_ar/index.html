@@ -23,33 +23,31 @@
             embedded
             gesture-detector
         >
-        <a-entity geometry="primitive: plane" rotation="-90 0 0">
-            <a-marker
-                    id="animated-marker"
-                    type="pattern"
-                    preset="custom"
-                    url="assets/marker/pattern-0.patt"
-                    raycaster="objects: .clickable"
-                    emitevents="true"
-                    cursor="fuse: false; rayOrigin: mouse;"
-                >
-                    <a-image
-                        id="aimage_back_02"
-                        src="assets/images/02-b.png"
-                        class="clickable"
-                        position="0 0 0"
-                        scale="1 1 1"
-                        gesture-handler 
-                    ></a-image>
-                    <a-image
-                        id="aimage_front_02"
-                        src="assets/images/02-f.png"
-                        class="clickable"
-                        position="0 0 1"
-                        scale="1 1 1"
-                        gesture-handler 
-                    ></a-image>
-                </a-entity>
+        <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/marker/pattern-0.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-image
+                    id="aimage_back_02"
+                    src="assets/images/02-b.png"
+                    class="clickable"
+                    position="0 0 0"
+                    scale="1 1 1"
+                    gesture-handler 
+                ></a-image>
+                <a-image
+                    id="aimage_front_02"
+                    src="assets/images/02-f.png"
+                    class="clickable"
+                    position="0 1 0"
+                    scale="1 1 1"
+                    gesture-handler 
+                ></a-image>
             </a-marker>
 
             <a-entity camera></a-entity>
