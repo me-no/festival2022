@@ -36,8 +36,8 @@
                 <a-image
                     id="aimage_front_02"
                     src="assets/images/02-f.png"
-                    scale="10 10 10"
-                    class="clickable a-image"
+                    scale="1 1 1"
+                    class="clickable"
                     rotation="-90 0 0"
                     position="0 0 0"
                     gesture-handler 
@@ -45,103 +45,16 @@
                 <a-image
                     id="aimage_back_02"
                     src="assets/images/02-b.png"
-                    scale="10 10 10"
-                    class="clickable a-image"
+                    class="clickable"
                     rotation="-90 0 0"
                     position="0 1 0"
                     gesture-handler 
                 ></a-image>
-
-                <a-image
-                    id="aimage_front_03"
-                    src="assets/images/03-f.png"
-                    scale="10 10 10"
-                    class="clickable a-image"
-                    rotation="-90 0 0"
-                    position="0 0 0"
-                    gesture-handler 
-                ></a-image>
-                <a-image
-                    id="aimage_back_03"
-                    src="assets/images/03-b.png"
-                    scale="10 10 10"
-                    class="clickable a-image"
-                    rotation="-90 0 0"
-                    position="0 1 0"
-                    gesture-handler 
-                ></a-image>
-
-                <a-image
-                    id="aimage_front_04"
-                    src="assets/images/04-f.png"
-                    scale="10 10 10"
-                    class="clickable a-image"
-                    rotation="-90 0 0"
-                    position="0 0 0"
-                    gesture-handler 
-                ></a-image>
-                <a-image
-                    id="aimage_back_04"
-                    src="assets/images/04-b.png"
-                    scale="10 10 10"
-                    class="clickable a-image"
-                    rotation="-90 0 0"
-                    position="0 1 0"
-                    gesture-handler 
-                ></a-image>
-
-                <a-image
-                    id="aimage_front_05"
-                    src="assets/images/05-f.png"
-                    scale="10 10 10"
-                    class="clickable a-image"
-                    rotation="-90 0 0"
-                    position="0 0 0"
-                    gesture-handler 
-                ></a-image>
-                <a-image
-                    id="aimage_back_05"
-                    src="assets/images/05-b.png"
-                    scale="10 10 10"
-                    class="clickable a-image"
-                    rotation="-90 0 0"
-                    position="0 1 0"
-                    gesture-handler 
-                ></a-image>
-
 
             </a-marker>
 
             <a-entity camera></a-entity>
         </a-scene>
-
-        <style>
-            .a-image {
-                display:none;
-            }
-        </style>
-
-        <script>
-            // URLクエリの値を取得する関数
-            function getParameterByName(name, url) {
-                if (!url) url = window.location.href;
-                name = name.replace(/[\[\]]/g, "\\$&");
-                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                    results = regex.exec(url);
-                if (!results) return null;
-                if (!results[2]) return '';
-                return decodeURIComponent(results[2].replace(/\+/g, " "));
-            }
-            
-            // URLクエリから画像URLを取得
-            var pageNumber = getParameterByName('page');
-            
-            // display 属性を更新
-            document.getElementById("aimage_front_"+pageNumber).style.display = 'unset';
-            document.getElementById("aimage_back_"+pageNumber).style.display = 'unset';
-            //let src_front = "assets/images/" + pageNumber + "-f.png";
-            //let src_back = "assets/images/" + pageNumber + "-b.png";
-        </script>
 
     </body>
 </html>
