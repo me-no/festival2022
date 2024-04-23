@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html>
     <head>
         <!--
@@ -33,7 +34,8 @@
                 id="markerA"
             >
                 <a-image
-                    src="assets/images/02-b.png"
+                    id="aimage_front"
+                    src=""
                     scale="10 10 10"
                     class="clickable"
                     rotation="-90 0 0"
@@ -41,187 +43,8 @@
                     gesture-handler
                 ></a-image>
                 <a-image
-                    src="assets/images/02-f.png"
-                    scale="10 10 10"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 1 0"
-                    gesture-handler
-                ></a-image>
-            </a-marker>
-
-            <!--
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker/pattern-1.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-            -->
-
-            <a-nft
-                type="nft"        
-                url="https://p5.menopixel.net/murasaki_ar/assets/marker/nft/marker03"
-                smooth="true"
-                smoothCount="10"
-                smoothTolerance=".01"
-                smoothThreshold="5"
-            >
-                <a-image
-                    src="assets/images/03-b.png"
-                    scale="1 1 1"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 0 0"
-                    gesture-handler
-                ></a-image>
-                <a-image
-                    src="assets/images/03-f.png"
-                    scale="1 1 1"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 1 0"
-                    gesture-handler
-                ></a-image>
-            </a-nft>
-
-
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker/pattern-2.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-image
-                    src="assets/images/04-b.png"
-                    scale="10 10 10"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 0 0"
-                    gesture-handler
-                ></a-image>
-                <a-image
-                    src="assets/images/04-f.png"
-                    scale="10 10 10"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 1 0"
-                    gesture-handler
-                ></a-image>
-            </a-marker>
-
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker/pattern-3.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-image
-                    src="assets/images/05-b.png"
-                    scale="10 10 10"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 0 0"
-                    gesture-handler
-                ></a-image>
-                <a-image
-                    src="assets/images/05-f.png"
-                    scale="10 10 10"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 1 0"
-                    gesture-handler
-                ></a-image>
-            </a-marker>
-
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker/pattern-4.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-image
-                    src="assets/images/06-b.png"
-                    scale="10 10 10"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 0 0"
-                    gesture-handler
-                ></a-image>
-                <a-image
-                    src="assets/images/06-f.png"
-                    scale="10 10 10"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 1 0"
-                    gesture-handler
-                ></a-image>
-            </a-marker>
-
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker/pattern-5.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-image
-                    src="assets/images/07-b.png"
-                    scale="10 10 10"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 0 0"
-                    gesture-handler
-                ></a-image>
-                <a-image
-                    src="assets/images/07-f.png"
-                    scale="10 10 10"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 1 0"
-                    gesture-handler
-                ></a-image>
-            </a-marker>
-
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker/pattern-6.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-image
-                    src="assets/images/08-b.png"
-                    scale="10 10 10"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    position="0 0 0"
-                    gesture-handler
-                ></a-image>
-                <a-image
-                    src="assets/images/08-f.png"
+                    id="aimage_back"
+                    src=""
                     scale="10 10 10"
                     class="clickable"
                     rotation="-90 0 0"
@@ -232,5 +55,26 @@
 
             <a-entity camera></a-entity>
         </a-scene>
+        
+        <script>
+            // URLクエリの値を取得する関数
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+            
+            // URLクエリから画像URLを取得
+            var pageNumber = getParameterByName('page');
+            
+            // 画像URLをImageタグのsrc属性にセット
+            document.getElementById('aimage_front').src = "assets/images/" + pageNumber + "-f.png";
+            document.getElementById('aimage_back').src = "assets/images/" + pageNumber + "-b.png";
+        </script>
+
     </body>
 </html>
