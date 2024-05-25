@@ -1,0 +1,88 @@
+body {
+    font-family: "Zen Maru Gothic", serif;
+}
+
+.title {
+    border-top:solid 2px;
+    border-bottom:solid 2px;
+    border-color:#428442;
+    color: #fff;
+    padding:16px;
+    font-family: "Hina Mincho", serif;
+    font-size:32px;
+    text-align:center;
+    @media screen and (max-width:720px) {
+        font-size:20px;
+    }
+}
+
+.wrapper {
+    display:flex;
+    flex-direction:column;
+    max-width:70vw;
+    margin:auto;
+    @media screen and (max-width:720px) {
+        max-width:80vw;
+    }
+}
+.wrapper p {
+    font-size:16px;
+}
+.wrapper img {
+    max-width:512px;
+    margin: auto;
+    width:100%;
+    margin-bottom:8rem;
+}
+
+form label {
+    font-size:16px;
+}
+
+form textarea {
+    height:10rem;
+    margin:24px 0;
+    font-family:"Zen Maru Gothic", serif;
+    font-size:16px;
+    background-color:rgba(255,255,255,0.6);
+    border:none;
+    border-radius:4px;
+}
+form textarea:focus  {
+    outline:solid 1px #428442;
+}
+
+form input {
+    background: #6E1E63;
+    padding: 4px 24px;
+    color:#fff;
+    max-width:fit-content;
+    font-weight:bold;
+    font-size:16px;
+    margin:auto;
+    border:none;
+    border-radius:4px;
+    font-family:"Zen Maru Gothic", serif;
+}
+form input:hover {
+    opacity:0.8;
+    cursor:pointer;
+}
+
+footer div {
+    position:fixed;
+    top:calc(100% - 3rem);
+    left:0;
+    width:100%;
+    color:rgba(255,255,255,0.7);
+    font-size:12px;
+    font-weight:bold;
+    height:3rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:#829568;
+}
+footer div a {
+    padding:4px;
+}

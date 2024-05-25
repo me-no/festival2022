@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>	
+        <meta name="viewport" content="width=device-width" />
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+        <title>『あの紫色の喫茶店』お客さまの声フォーム</title>
+    </head>
+    <body>
+        <h1 class="title">『あの紫色の喫茶店』<br />お客さまの声フォーム</h1>
+        
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScnX3B3WqVJTjXQLdI_FLWnA7MxeeqpToJ3sShDlP-QVfUngA/formResponse?embedded=true"
+            method="post"
+            target="hidden_iframe"
+            onsubmit="submitted=true;"
+            class="wrapper">
+            
+            <label for="entry.867778327">ひとこと、どうぞ。*</label>
+            <textarea name="entry.867778327" required></textarea>
+    
+            <input type="submit" value="送信">
+        </form>
+        
+        <script type="text/javascript">
+            var submitted = false;
+        </script>
+        <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            style="display: none"
+            onload="if(submitted)  {window.location='thanks.html';}"
+        ></iframe>
+    </body>
+    <footer>
+        <div>2024 by <a href="https://menopixel.net" target="_blank">menopixel.net</a></div>
+    </footer>
+</html>
+
+</html>
+
+<style>
+    html {
+        background-color:#829568;
+    }
+</style>
+
