@@ -36,11 +36,6 @@
                     rotation="-90 0 0"
                     scale="1.5 2 1.5"
                     material="shader:gif;src:url(assets/hackle-start.gif);opacity:1"></a-entity>
-                <a-entity 
-                    geometry="primitive:plane;"
-                    rotation="-90 0 0"
-                    position="1 5 1"
-                    material="shader:gif;src:url(assets/text-start.gif);opacity:1"></a-entity>
             </a-marker>
 
             <a-marker
@@ -57,6 +52,13 @@
                     rotation="-90 0 0"
                     position="-0.5 0 0"
                     material="shader:gif;src:url(assets/hackle-broke.gif);opacity:1"></a-entity>
+                <a-image
+                    src="assets/text-broke.png"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    position="1 2 1"
+                    gesture-handler 
+                ></a-image>
             </a-marker>
 
             <a-marker
