@@ -34,29 +34,8 @@
                 <a-entity 
                     geometry="primitive:plane;"
                     rotation="-90 0 0"
-                    scale="1.5 1.5 1"
+                    scale="1.5 1.5 1.5"
                     material="shader:gif;src:url(assets/hackle-start.gif);opacity:1"></a-entity>
-            </a-marker>
-
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/pattern-marker-slip-sepia.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                
-            >
-                <a-entity 
-                    geometry="primitive:plane;"
-                    rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/hackle-slip.gif);opacity:1"></a-entity>
-                <a-image
-                    src="assets/object-slip.png"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    gesture-handler 
-                ></a-image>
             </a-marker>
 
             <a-marker
@@ -73,6 +52,30 @@
                     rotation="-90 0 0"
                     position="-0.5 0 0"
                     material="shader:gif;src:url(assets/hackle-broke.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-marker-slip-sepia.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                
+            >
+                <a-entity 
+                    geometry="primitive:plane;"
+                    rotation="-90 0 0"
+                    scale="1.5 1.5 1.5"
+                    material="shader:gif;src:url(assets/hackle-slip.gif);opacity:1"></a-entity>
+                <a-image
+                    src="assets/object-slip.png"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    scale="1.5 1.5 1.5"
+                    position="0 0 0.5"
+                    gesture-handler 
+                ></a-image>
             </a-marker>
 
             <a-entity camera></a-entity>
