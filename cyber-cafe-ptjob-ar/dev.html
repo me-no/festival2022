@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+
+        <!-- to load gifs -->
+        <!--
+        <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+        -->
+        <script src="dist/aframe-gif-shader.min.js"></script>
+    </head>
+
+    <body style="margin: 0; overflow: hidden;">
+        <a-scene
+            vr-mode-ui="enabled: false;"
+            loading-screen="enabled: false;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;patternRatio:0.90;"
+            id="scene"
+            embedded
+            gesture-detector
+        >
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-marker-start-sepia.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                
+            >
+                <a-entity 
+                    geometry="primitive:plane;"
+                    rotation="-90 0 0"
+                    scale="1.5 1.5 1"
+                    material="shader:gif;src:url(assets/hackle-start.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-marker-slip-sepia.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                
+            >
+                <a-entity 
+                    geometry="primitive:plane;"
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/hackle-slip.gif);opacity:1"></a-entity>
+                <a-image
+                    src="assets/object-slip.png"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler 
+                ></a-image>
+            </a-marker>
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-marker-broke-right-sepia.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                
+            >
+                <a-entity 
+                    geometry="primitive:plane;"
+                    rotation="-90 0 0"
+                    position="-0.5 0 0"
+                    material="shader:gif;src:url(assets/hackle-broke.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
