@@ -80,13 +80,17 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 
             >
-                <a-entity 
-                    geometry="primitive:plane;"
+                <a-image src="assets/hackle_drone.png"
                     rotation="-90 0 0"
-                    scale="1.5 2 1.5"
-                    animation="property:position; from:0 0 0; to:-4 0 -4; 
+                    scale="1.5 1.5 1.5"
+                    animation="property:position; from:0 0 0; to:-3 0 -2; 
                         dur:2000; dir:alternate; loop:true; easing:linear;"
-                    material="shader:gif;src:url(assets/hackle_drone.png);opacity:1"></a-entity>
+                ></a-image>
+                <a-image 
+                    rotation="-90 0 0"
+                    src="assets/drone-sub.png" 
+                    scale="1 0.25 1"
+                    position="0 2 0"></a-image>
             </a-marker>
 
             <a-entity camera></a-entity>
