@@ -70,6 +70,29 @@
                     material="shader:gif;src:url(assets/pt-job-slip.gif);opacity:1"></a-entity>
             </a-marker>
 
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-marker-drone-sepia.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                
+            >
+                <a-image src="assets/hackle_drone.png"
+                    rotation="-90 0 0"
+                    scale="1.5 1.5 1.5"
+                    animation="property:position; from:0 0 0; to:-3 0 -2; 
+                        dur:2000; dir:alternate; loop:true; easing:linear;"
+                ></a-image>
+                <a-image 
+                    rotation="-90 0 0"
+                    src="assets/drone-sub.png" 
+                    scale="1 0.25 1"
+                    position="0 0 1"></a-image>
+            </a-marker>
+
             <a-entity camera></a-entity>
         </a-scene>
     </body>
